@@ -67,7 +67,7 @@ namespace PTTExcelToJsonConverter
                     throw new Exception(streetCell.Address.ToString());
                 var pkCell = row.Cell(pkColumnIndex);
                 if (!pkCell.TryGetValue<string>(out string pk))
-                    throw new Exception(streetCell.Address.ToString());
+                    throw new Exception(pkCell.Address.ToString());
 
                 beforeAddedDistrict.Streets.Add(new Models.Street
                 {
