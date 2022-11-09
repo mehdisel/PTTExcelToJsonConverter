@@ -101,7 +101,8 @@ namespace PTTExcelToJsonConverter
                 Id=x.Id,
                 Name=x.Name,
                 DistrictId= x.DistrictId,
-                CityId= x.CityId
+                CityId= x.CityId,
+                PK=x.PK
             }).ToList();
 
             var convertedPath = Path.Combine(Environment.CurrentDirectory, "Converted");
