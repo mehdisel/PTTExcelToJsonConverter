@@ -38,7 +38,7 @@ namespace PTTExcelToJsonConverter
                 if (!cityCell.TryGetValue<string>(out string city))
                     throw new Exception(cityCell.Address.ToString());
 
-                var cityIdIndex = cityList.Count() > 0 ? cityList.Max(x => x.Id) + 1 : 1;
+                var cityIdIndex = cityList.Count() > 0 ? cityList.Max(x => x.Id) +1 : 1;
                 var beforeAddedCity = cityList.FirstOrDefault(x => x.Name == city.Trim()) ?? new Models.City { 
                     Id = cityIdIndex,
                     Name=city.Trim()
@@ -51,7 +51,7 @@ namespace PTTExcelToJsonConverter
                 {
                     Id = districtIdIndex,
                     Name = district.Trim(),
-                    CityId = cityIdIndex,
+                    CityId = beforeAddedCity.Id,
                     City = beforeAddedCity
                 };
 
