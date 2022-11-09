@@ -15,7 +15,10 @@ namespace PTTExcelToJsonConverter
             /*Bu kısım dinamik olarak çekilebilir.*/
             var filePath = Directory.GetFiles(Environment.CurrentDirectory).ToList().FirstOrDefault(x=>x.EndsWith(".xlsx"));
             if (string.IsNullOrWhiteSpace(filePath))
+            {
                 Console.WriteLine(".xlsx uzantılı pk listesi bulunamadı.");
+                return;
+            }
             /*kolon isminden dinamik olarak yakalanabilir.*/
             var cityColumnIndex = 1;
             var districtColumnIndex = 2;
